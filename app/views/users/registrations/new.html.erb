@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-7 text">
+    <h1 class="welcome title"><%= t("general.welcome.title") %></h1>
+    <div class="welcome description">
+      <p><%= t("general.welcome.description") %><p/>
+    </div>
+
+    <div class="welcome links">
+      <%= link_to t("general.welcome.links.about"), "#" %>
+      <%= link_to t("general.welcome.links.hows_work"), "#" %>
+    </div>
+  </div>
+
+  <div class="col-sm-5 form-box">
+    <div class="form-top">
+      <h3><%= t("devise.sign_up_register") %></h3>
+    </div>
+
+    <div class="form-bottom">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input_field :name, required: true, autofocus: true, class: "form-control", label_html: { class: "sr-only" } %>
+        <%= f.input_field :email, required: true, class: "form-control", label_html: { class: "sr-only" } %>
+        <%= f.input_field :password, required: true, class: "form-control", label_html: { class: "sr-only" } %>
+        <%= f.input_field :password_confirmation, required: true, class: "form-control", label_html: { class: "sr-only" } %>
+        <div class="checkbox"></div>
+        <%= f.button :submit, t("devise.sign_up"), class: "btn btn-lg btn-primary btn-block" %>
+      <% end %>
+
+      <div class="form-links">
+        <%= link_to t("devise.back_to_login"), new_session_path(resource_name) %>
+      </div>
+    </div>
+  </div>
+</div>
