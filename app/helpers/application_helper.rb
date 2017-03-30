@@ -12,4 +12,12 @@ module ApplicationHelper
       link_to t("general.project.back"), :back, class: "btn btn-info"
     end
   end
+
+  def main_content
+    if user_signed_in?
+      render "layouts/email_content"
+    else
+      render "layouts/login_content"
+    end
+  end
 end

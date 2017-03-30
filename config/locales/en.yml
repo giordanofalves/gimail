@@ -9,3 +9,8 @@ en:
       links:
         about: "About us"
         hows_work: "How Gimail works?"
+    email:
+      index:
+        notice: "Email was successfully sent."
+      new:
+        submit: "Send Message"
