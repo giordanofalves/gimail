@@ -5,7 +5,7 @@ services:
   - postgresql
 addons:
   code_climate:
-    repo_token: f6718c30ecd81705ba2dc1a39a03e9546badf7ada2355f601ff7e7661acbba21
+    repo_token: d76dac93c914d616d4a86129945e56358fcc2cfa81d3938cfa7b0981ea11d9ba
 
 before_script:
   - psql -c "create database gimail_test;" -U postgres

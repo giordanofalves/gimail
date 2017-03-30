@@ -17,6 +17,10 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:password) }
   end
 
+  describe "Associations" do
+    it { have_and_belong_to_many :emails }
+  end
+
   describe "Factory" do
     let(:user) { build(:user) }
 

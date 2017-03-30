@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">New Message</h3>
+  </div>
+
+  <div class="panel-body">
+    <%= simple_form_for @email do |f| %>
+      <%= f.error_notification %>
+      
+      <%= f.association :users,
+        input_html: { class: "form-control" },
+        label_html: { class: "sr-only" }  %>
+      <%= f.input :subject, required: true,
+        input_html: { class: "form-control" },
+        label_html: { class: "sr-only" } %>
+      <%= f.input :body,
+        input_html: { class: "form-control" },
+        label_html: { class: "sr-only" } %>
+
+      <%= f.hidden_field :user_sent_id, value: current_user.id  %>
+
+      <%= f.button :submit, value: t("simple_form.general.email.submit"),
+        class: "btn btn-lg btn-primary btn-block" %>
+    <% end %>
+  </div>
+</div>

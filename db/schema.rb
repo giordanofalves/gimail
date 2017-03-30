@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328131629) do
+ActiveRecord::Schema.define(version: 20170328234302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "emails", force: :cascade do |t|
+    t.string   "subject",      null: false
+    t.text     "body",         null: false
+    t.integer  "user_sent_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["user_sent_id"], name: "index_emails_on_user_sent_id", using: :btree
+  end
+
+  create_table "emails_users", id: false, force: :cascade do |t|
+    t.integer "email_id", null: false
+    t.integer "user_id",  null: false
+    t.index ["email_id"], name: "index_emails_users_on_email_id", using: :btree
+    t.index ["user_id"], name: "index_emails_users_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   default: "", null: false

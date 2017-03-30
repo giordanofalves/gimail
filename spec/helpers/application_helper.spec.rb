@@ -21,4 +21,11 @@ RSpec.describe ApplicationHelper, type: :helper do
       expect(helper.back_link).to match(%r{<a class=(.*)href(.*)<\/a>$})
     end
   end
+
+  describe "#main_content" do
+    it "Should return login content." do
+      expect(helper.main_content).to include(t("general.project.title"))
+      expect(helper.main_content).to match(%r{<a class=(.*)href(.*)<\/a>$})
+    end
+  end
 end

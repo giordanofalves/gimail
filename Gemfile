@@ -15,6 +15,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'turbolinks', '~> 5'
+gem 'wysiwyg-rails', '~> 2.5.1'
+gem 'select2-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

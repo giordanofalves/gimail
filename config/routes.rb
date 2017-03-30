@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "home#index"
+  root "emails#new"
+
+  resources :emails, only: [:index, :new, :create]
 
   devise_for :users
 end

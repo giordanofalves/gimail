@@ -1,0 +1,6 @@
+<h1>Home</h1>
+<ul>
+  <% @emails.each do |email| %>
+    <li><%= email.subject %></li>
+  <% end %>
+</ul>

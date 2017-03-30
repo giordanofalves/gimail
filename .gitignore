@@ -11,3 +11,6 @@
 .byebug_history
 
 .DS_Store
+
+# Ignore coverage files
+/coverage/*
