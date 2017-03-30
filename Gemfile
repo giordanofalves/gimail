@@ -16,7 +16,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'turbolinks', '~> 5'
 gem 'wysiwyg-rails', '~> 2.5.1'
-gem 'select2-rails'
+gem 'select2-rails', '~> 4.0.3'
+gem 'mailgun-ruby', '~>1.1.4'
 
 group :development, :test do
   gem 'byebug', platform: :mri

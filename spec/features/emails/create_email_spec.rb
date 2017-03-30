@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Create email", type: :feature do
   describe "User can create email in GImail" do
-    let(:email)    { create(:email) }
+    let(:email)    { build(:email) }
     let(:received) { create(:user) }
 
     before do
