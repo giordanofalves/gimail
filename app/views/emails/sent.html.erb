@@ -1,13 +1,13 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Inbox</h3>
+    <h3 class="panel-title">Sent</h3>
   </div>
 
   <div class="panel-body">
     <table class="table table-hover">
       <thead>
       <tr>
-        <th><%= t("general.email.index.from") %></th>
+        <th><%= t("general.email.index.to") %></th>
         <th><%= t("general.email.index.subject") %></th>
         <th><%= t("general.email.index.date") %></th>
       </tr>
@@ -15,7 +15,10 @@
     <tbody>
       <% @emails.each do |email| %>
         <tr>
-          <td><%= link_to(email.user_sent.name, email_path(email)) %></td>
+          <td>
+            <%= link_to(truncate(email.users.pluck(:name).join(', ')), 
+                        email_path(email)) %>
+          </td>
           <td><%= email.subject %></td>
           <td><%= l(email.created_at, format: :short) %>
         </tr>

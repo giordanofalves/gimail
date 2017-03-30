@@ -6,7 +6,7 @@ RSpec.describe "Create email", type: :feature do
     let(:received) { create(:user) }
 
     before do
-      sign_in_helper(create(:user))
+      sign_in_helper(received)
       visit new_email_path
     end
 

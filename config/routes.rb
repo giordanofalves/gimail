@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  root "emails#new"
+  root "emails#index"
 
-  resources :emails, only: [:index, :new, :create]
+  resources :emails, except: [:destroy, :update] do
+    collection do
+      get "sent"
+    end
+  end
 
   devise_for :users
 end

@@ -14,8 +14,7 @@
 //= require plugins/paragraph_style.min.js
 //= require plugins/quote.min.js
 //= require plugins/table.min.js
-
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   $('textarea#email_body').froalaEditor({
     fullPage: true,
     height: 300,
