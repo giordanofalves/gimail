@@ -1,8 +1,13 @@
 class EmailsController < ApplicationController
   before_action :set_email, only: :show
+  before_action :emails_count, except: :create
 
   def index
-    @emails = Email.all
+    @emails = Email.received(current_user.id)
+  end
+
+  def sent
+    @emails = Email.sent(current_user.id)
   end
 
   def show; end
@@ -25,6 +30,11 @@ class EmailsController < ApplicationController
   end
 
   private
+
+  def emails_count
+    @sent_emails_count     = Email.sent(current_user.id).count
+    @received_emails_count = Email.received(current_user.id).count
+  end
 
   def set_email
     @email = Email.find(params[:id])

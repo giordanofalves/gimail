@@ -12,5 +12,13 @@ en:
     email:
       index:
         notice: "Email was successfully sent."
+        from: "From"
+        subject: "Subject"
+        date: "Date"
       new:
         submit: "Send Message"
+    sidebar:
+      links:
+        inbox: "Inbox"
+        sent: "Sent"
+        compose: "Compose"

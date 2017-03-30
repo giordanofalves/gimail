@@ -5,9 +5,21 @@
   <div class="panel-body">
     <div class="sidebar-nav">
         <ul class="nav nav-list">
-          <li><a href="#">Inbox <span class="badge badge-info">4</span></a></li>
-          <li><a href="#">Sent</a></li>
-          <li><a href="#">Compose</a></li>
+          <li>
+            <%= link_to emails_path do %>
+              <%= t("general.sidebar.inbox") %>
+              <span class="badge badge-info"><%= @received_emails_count %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to sent_emails_path do %>
+              <%= t("general.sidebar.sent") %>
+              <span class="badge badge-info"><%= @sent_emails_count %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to(t("general.sidebar.compose"), new_email_path) %>
+          </li>
         </ul>
       </div>
   </div>
