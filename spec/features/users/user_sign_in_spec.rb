@@ -6,7 +6,7 @@ RSpec.describe "Sign in", type: :feature do
     double(:user, email: Faker::Internet.email, password: Faker::Internet.password(8))
   end
 
-  describe "As a user I want to log in on Marvels" do
+  describe "As a user I want to log in on Gimail" do
     before do
       visit new_user_session_path
     end

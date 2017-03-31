@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "Resgistration", type: :feature do
-  describe "User can register yourself in Marvels" do
+  describe "User can register yourself in Gimail" do
     let(:user) do
       double(:user, email: Faker::Internet.email, password: Faker::Internet.password(8))
     end
